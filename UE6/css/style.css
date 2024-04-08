@@ -1,0 +1,112 @@
+*, html, body {
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+section {
+    width: 90%;
+    max-width: 900px;
+    margin: 100px auto;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+section .newToDo {
+    width: 35%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 16px;
+    border-radius: 20px;
+}
+section .newToDo div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+section .newToDo input, section .newToDo textarea {
+    border: 1px solid lightgray;
+    padding: 8px 16px;
+    border-radius: 20px;
+    width: 100%;
+}
+section .newToDo input[type=submit] {
+    background-color: #7e22ce;
+    color: white;
+    border: none;
+    transition: background-color 250ms, color 250ms, box-shadow 250ms;
+}
+section .newToDo input[type=submit]:hover {
+    cursor: pointer;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+section .all-todos {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+section .all-todos .todo {
+    padding: 16px;
+    border-radius: 20px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+section .all-todos .todo form {
+    width: 100%;
+  }
+  section .all-todos .todo form input, section .all-todos .todo form textarea {
+    width: 100%;
+    height: auto;
+    border: none;
+    border-radius: 4px;
+    transition: all 250ms;
+  }
+  section .all-todos .todo form input:focus, section .all-todos .todo form textarea:focus {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 8px;
+  }
+  section .all-todos .todo form input {
+    font-size: 1.2em;
+  }
+  section .all-todos .todo form textarea {
+    font-size: 1em;
+  }
+  section .all-todos .todo form .edit {
+    margin-top: 10px;
+    font-size: 0.85em;
+    width: auto;
+    margin-right: 10px;
+    border: 2px solid green;
+    border-radius: 20px;
+    background-color: white;
+    padding: 2px 8px;
+    transition: background-color 250ms, color 250ms, box-shadow 250ms;
+  }
+  section .all-todos .todo form .edit:hover {
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+
+section .all-todos .todo .delete {
+    border: 2px solid red;
+    border-radius: 20px;
+    background-color: white;
+    padding: 2px 8px;
+    transition: background-color 250ms, color 250ms, box-shadow 250ms;
+  }
+  section .all-todos .todo .delete:hover {
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }/*# sourceMappingURL=style.css.map */

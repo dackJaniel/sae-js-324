@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="js/main.js" defer></script>
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- fontawsome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet" />
+  </head>
+  <body>
+    <section>
+      <form class="newToDo">
+        <div>
+          <label for="name">ToDo Name</label>
+          <input type="text" id="name" name="name" />
+          <small id="name-err"></small>
+        </div>
+        <div>
+          <label for="text">ToDo Text</label>
+          <textarea type="text" id="text" name="text"></textarea>
+          <small id="content-err"></small>
+        </div>
+        <input type="submit" value="Hinzufügen" />
+      </form>
+      <div class="all-todos"></div>
+    </section>
+  </body>
+</html>
