@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    #box {
+      width: 100%;
+      height: 100px;
+      background-color: green;
+    }
+    #sec {
+      width: 100%;
+      height: 100px;
+      background-color: red;
+    }
+  </style>
+  <body>
+    <div id="box"></div>
+    <div id="sec"></div>
+  </body>
+
+  <script>
+    const box = document.getElementById("box");
+    const sec = document.getElementById("sec");
+
+    const resizeObserver = new ResizeObserver((entries) => {
+      for (let entry of entries) {
+        console.log(entry.target);
+        console.log(entry.contentRect.width);
+        console.log(entry.contentRect.height);
+
+        
+
+        sec.style.backgroundColor = "blue";
+
+        // if (entry.contentRect.width > 500) {
+        //   sec.style.backgroundColor = "blue";
+        // } else {
+
+        // }
+      }
+      console.log(entries);
+      console.log("Resized");
+    });
+
+    resizeObserver.observe(box);
+  </script>
+</html>

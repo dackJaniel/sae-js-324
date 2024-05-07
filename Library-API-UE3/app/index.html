@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script type="module" src="main.js" defer></script>
+  </head>
+  <body>
+    <form novalidate enctype="multipart/form-data">
+      <label for="name">name</label>
+      <input type="text" name="name" required />
+      <input type="file" name="file" accept="image/*" />
+      <input type="submit" value="Submit" />
+    </form>
+    <div
+      id="progressBar"
+      class="w-full rounded-md bg-violet-500 p-2 text-white text-center transition-colors"></div>
+  </body>
+</html>

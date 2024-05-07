@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        height: 200vh;
+        box-sizing: border-box;
+      }
+
+      #box {
+        width: 100px;
+        height: 100px;
+        background-color: green;
+        position: absolute;
+        top: 150vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box"></div>
+  </body>
+
+  <script>
+    const box = document.getElementById("box");
+
+    const options = {
+      //   root: null,
+      //   rootMargin: "0px",
+      threshold: 1,
+    };
+
+    const intersectionObser = new IntersectionObserver((entries, options) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          console.log("Intersecting");
+          box.style.backgroundColor = "red";
+        } else {
+          console.log("Not Intersecting");
+          box.style.backgroundColor = "green";
+        }
+      });
+    });
+
+    intersectionObser.observe(box);
+  </script>
+</html>

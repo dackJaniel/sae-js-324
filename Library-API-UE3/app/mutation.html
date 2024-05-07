@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box">Hallo</div>
+    <button>Click me</button>
+  </body>
+  <script>
+    const box = document.getElementById("box");
+    const button = document.querySelector("button");
+
+    button.addEventListener("click", () => {
+      //   box.textContent = "Hallo Welt";
+      box.style.backgroundColor = "red";
+    });
+
+    const mutationObserver = new MutationObserver((mutations, options) => {
+      mutations.forEach((mutation) => {
+        console.log("Type:", mutation.type);
+        console.log("Target:", mutation.target);
+        console.log("Added nodes:", mutation.addedNodes);
+        console.log("Removed nodes:", mutation.removedNodes);
+      });
+    });
+
+    mutationObserver.observe(box, {
+      childList: true, // Hinzufügen oder Entfernen von Kindknoten beobachten
+      attributes: true, // Änderungen an Attributen beobachten
+      characterData: true, // Änderungen am Textinhalt beobachten
+      subtree: true, // Änderungen in allen Nachkommen beobachten
+      attributeOldValue: true, // Alte Werte der Attribute verfolgen
+      characterDataOldValue: true, // Alte Textinhalte verfolgen
+    });
+  </script>
+</html>
