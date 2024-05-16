@@ -1,5 +1,5 @@
 import "./style.css";
 
-import { nav } from "./components/nav";
+import { nav } from "./components/Nav";
 
 nav();

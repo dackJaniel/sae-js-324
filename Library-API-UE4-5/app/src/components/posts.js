@@ -1,14 +1,22 @@
-import { getAuthors, getImages, getPosts } from "../utils/data";
+import {
+  getAuthors,
+  getImages,
+  getPaginatedPosts,
+  getPosts,
+} from "../utils/data";
 
 const app = document.getElementById("app");
 
-const posts = await getPosts();
+// const posts = await getPosts();
+let posts = [];
+let page = 1;
 const authors = await getAuthors();
 const images = await getImages();
 
-posts.forEach((post) => {
-  const author = authors[post.userId - 1].name;
-  app.innerHTML += `
+function renderPosts() {
+  posts.forEach((post) => {
+    const author = authors[post.userId - 1].name;
+    app.innerHTML += `
     <a href="/pages/post/index.html?postId=${post.id}">
       <div class="border border-gray p-4 rounded-md shadow-sm">
         <img class="w-full rounded-md mb-2" src="${
@@ -21,4 +29,25 @@ posts.forEach((post) => {
         }</p>
       </div>
     </a>`;
+  });
+}
+
+const intersectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(async (entry) => {
+    if (entry.isIntersecting) {
+      page++;
+      findPosts();
+      intersectionObserver.unobserve(app.lastChild);
+    }
+  });
 });
+
+async function findPosts() {
+  const res = await getPaginatedPosts({ page });
+  posts.push(...res);
+  renderPosts();
+
+  intersectionObserver.observe(app.lastChild);
+}
+
+findPosts();

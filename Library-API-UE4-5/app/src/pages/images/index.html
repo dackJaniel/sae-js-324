@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script type="module" src="../../main.js"></script>
+    <script type="module" src="../../components/Images.js"></script>
+  </head>
+  <body>
+    <main class="p-1 max-w-3xl m-auto">
+      <div id="nav"></div>
+      <h1 class="text-5xl my-4">Unsere Bilder</h1>
+      <form class="flex my-2 gap-2">
+        <input
+          type="text"
+          id="search"
+          name="query"
+          class="w-full p-2 border border-gray-100 rounded-md"
+          placeholder="Suche nach Bildern" />
+        <input
+          type="submit"
+          value="Suchen"
+          class="bg-purple-500 hover:bg-purple-600 cursor-pointer p-2 rounded-md text-white" />
+      </form>
+      <div id="app" class="grid grid-cols-2 md:grid-cols-3 gap-2"></div>
+      <div
+        class="flex w-min m-auto my-2 bg-gray-100 rounded-full p-2 items-center">
+        <div class="cursor-pointer" id="left">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.75 19.5 8.25 12l7.5-7.5" />
+          </svg>
+        </div>
+        <span id="page">1</span>
+        <div class="cursor-pointer" id="right">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+          </svg>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

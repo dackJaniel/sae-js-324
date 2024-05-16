@@ -7,7 +7,12 @@ export function nav() {
           Home
         </a>
       </li>
+      <li>
+        <a href="/pages/images/index.html" class="hover:underline">
+          Bilder
+        </a>
+      </li>
     </ul>
   </nav>`;
-  console.log("nav");
+  // console.log("nav");
 }
